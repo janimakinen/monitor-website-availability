@@ -37,4 +37,9 @@ class MonitorControllerTest {
 
         assertThat(result.getResponse().getContentAsString()).isEqualTo(application.getHelloMessage());
     }
+
+    @Test
+    void home() {
+        assertThat(monitorController.home()).isEqualTo(application.getHelloMessage());
+    }
 }
