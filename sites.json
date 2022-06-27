@@ -1,0 +1,14 @@
+[
+    {
+        "url": "https://www.janimakinen.com",
+        "checkIntervalMS": "10000",
+        "mustContainText": "hobbies"
+    },
+    {
+        "url": "https://www.shan-liao.com",
+        "checkIntervalMS": "30000"
+    },
+    {
+        "url": "https://www.google.com"
+    }
+]
