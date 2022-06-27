@@ -10,6 +10,18 @@ That's that.
 
 ---
 
+# How to run the app?
+
+For tests run the following:
+
+```./gradlew test```
+
+For the main application run:
+
+```./gradlew bootRun```
+
+then navigate to localhost:8080 with your browser.
+
 ## Developer instructions
 
 This is a Java Spring Boot Web Application.
