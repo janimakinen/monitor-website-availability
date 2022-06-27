@@ -20,9 +20,4 @@ class MonitorWebsiteAvailabilityApplicationTest {
         assertThat(application).isNotNull();
         assertThat(monitorController).isNotNull();
     }
-
-    @Test
-    void getHelloMessage() {
-        assertThat(application.getHelloMessage()).isEqualTo(monitorController.home());
-    }
 }
