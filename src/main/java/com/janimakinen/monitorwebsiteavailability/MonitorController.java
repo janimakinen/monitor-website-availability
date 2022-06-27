@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class MonitorController {
 
     @Autowired
-    MonitorWebsiteAvailabilityApplication application;
+    MonitorService monitorService;
 
     @GetMapping("/")
-    public String home() {
-        return application.getHelloMessage();
+    public String monitor() {
+        return monitorService.monitorURLs();
     }
 
 }

@@ -3,43 +3,20 @@ package com.janimakinen.monitorwebsiteavailability;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
-@WebMvcTest
+@SpringBootTest
 class MonitorControllerTest {
 
     @Autowired
-    MockMvc mockMvc;
-
-    @Autowired
-    MonitorController monitorController;
-
-    @Autowired
-    MonitorWebsiteAvailabilityApplication application;
+    MonitorService monitorService;
 
     @Test
-    void controllerLoads() {
-        assertThat(application).isNotNull();
-        assertThat(monitorController).isNotNull();
-    }
-
-    @Test
-    void homeEndpoint() throws Exception {
-        MvcResult result = mockMvc.perform(MockMvcRequestBuilders
-                        .get("/"))
-                        .andExpect(status().isOk())
-                        .andReturn();
-
-        assertThat(result.getResponse().getContentAsString()).isEqualTo(application.getHelloMessage());
-    }
-
-    @Test
-    void home() {
-        assertThat(monitorController.home()).isEqualTo(application.getHelloMessage());
+    void monitor() {
+        assertThat(monitorService.monitorURLs()).doesNotContain("error");
+        System.out.println("Result of test run of monitor service get URLs:" + monitorService.monitorURLs());
     }
 }
